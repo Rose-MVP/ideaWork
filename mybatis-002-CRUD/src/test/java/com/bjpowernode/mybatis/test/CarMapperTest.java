@@ -13,7 +13,7 @@ public class CarMapperTest {
     @Test
     public  void testInsertCarByPOJO(){
         SqlSession sqlSession = SqlSessionUtil.OpenSession();
-        //封装数据
+        // pojo 封装数据
         Car car=new Car(null,"3333","比亚迪唐",31.1,"2023-01-01","新能源");
         sqlSession.insert("insertCar",car);
         //执行sql
@@ -21,6 +21,7 @@ public class CarMapperTest {
         sqlSession.close();
     }
 //    @Test
+    //
 //    public  void testInsertCar(){
 //        SqlSession sqlSession = SqlSessionUtil.OpenSession();
 //        Map<String, Object> map =new HashMap<>();
@@ -34,4 +35,12 @@ public class CarMapperTest {
 //        sqlSession.commit();
 //        sqlSession.close();
 //    }
+    @Test
+    public  void  testDeletId(){
+        SqlSession sqlSession = SqlSessionUtil.OpenSession();
+        int count = sqlSession.delete("deleteById","22");
+        System.out.println(count);
+        sqlSession.commit();
+        sqlSession.close();
+    }
 }
