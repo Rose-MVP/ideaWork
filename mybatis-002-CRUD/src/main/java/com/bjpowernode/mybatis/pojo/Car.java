@@ -3,7 +3,7 @@ package com.bjpowernode.mybatis.pojo;
 public class Car {
     //
     private Long id;
-    private String carNum;
+    private String CarNum;
     private  String brand;
     private  Double guidePrice;
     private String produceTime;
@@ -13,7 +13,7 @@ public class Car {
     public String toString() {
         return "Car{" +
                 "id=" + id +
-                ", carNum='" + carNum + '\'' +
+                ", CarNum='" + CarNum + '\'' +
                 ", brand='" + brand + '\'' +
                 ", guidePrice=" + guidePrice +
                 ", produceTime='" + produceTime + '\'' +
@@ -26,7 +26,7 @@ public class Car {
     }
 
     public String getCarNum() {
-        return carNum;
+        return CarNum;
     }
 
     public String getBrand() {
@@ -48,9 +48,9 @@ public class Car {
     public Car() {
     }
 
-    public Car(Long id, String carNum, String brand, Double guidePrice, String produceTime, String carType) {
+    public Car(Long id, String CarNum, String brand, Double guidePrice, String produceTime, String carType) {
         this.id = id;
-        this.carNum = carNum;
+        this.CarNum = CarNum;
         this.brand = brand;
         this.guidePrice = guidePrice;
         this.produceTime = produceTime;
@@ -61,8 +61,8 @@ public class Car {
         this.id = id;
     }
 
-    public void setCarNum(String carNum) {
-        this.carNum = carNum;
+    public void setCarNum(String CarNum) {
+        this.CarNum = CarNum;
     }
 
     public void setBrand(String brand) {

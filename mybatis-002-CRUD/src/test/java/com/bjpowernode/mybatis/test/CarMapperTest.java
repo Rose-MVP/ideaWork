@@ -20,18 +20,18 @@ public class CarMapperTest {
         sqlSession.commit();
         sqlSession.close();
     }
-    @Test
-    public  void testInsertCar(){
-        SqlSession sqlSession = SqlSessionUtil.OpenSession();
-        Map<String, Object> map =new HashMap<>();
-        map.put("car_num","222");
-        map.put("brand","比亚迪秦");
-        map.put("guide_price","21.2");
-        map.put("produce_time","2022-11-11");
-        map.put("car_type","新能源");
-        int count  =sqlSession.insert("insertCar",map);
-        System.out.println(count);
-        sqlSession.commit();
-        sqlSession.close();
-    }
+//    @Test
+//    public  void testInsertCar(){
+//        SqlSession sqlSession = SqlSessionUtil.OpenSession();
+//        Map<String, Object> map =new HashMap<>();
+//        map.put("carNum","555");
+//        map.put("brand","比亚迪明");
+//        map.put("guide_price","23.2");
+//        map.put("produce_time","2023-11-11");
+//        map.put("car_type","新能源");
+//        int count  =sqlSession.insert("insertCar",map);
+//        System.out.println(count);
+//        sqlSession.commit();
+//        sqlSession.close();
+//    }
 }
