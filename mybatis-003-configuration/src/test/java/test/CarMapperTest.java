@@ -14,7 +14,7 @@ public class CarMapperTest {
         SqlSession sqlSession = SqlSessionUtil.OpenSession();
         // pojo 封装数据
         Car car=new Car(null,"3333","比亚迪唐",31.1,"2023-01-01","新能源");
-        sqlSession.insert("insertCar",car);
+        sqlSession.insert("yc.insertCar",car);
         //执行sql
         sqlSession.commit();
         sqlSession.close();
