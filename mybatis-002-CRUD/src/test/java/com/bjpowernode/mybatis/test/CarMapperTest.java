@@ -6,6 +6,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -41,6 +42,29 @@ public class CarMapperTest {
         int count = sqlSession.delete("deleteById","22");
         System.out.println(count);
         sqlSession.commit();
+        sqlSession.close();
+    }
+    @Test
+    public  void testUpdateId(){
+        SqlSession sqlSession = SqlSessionUtil.OpenSession();
+        int count =sqlSession.update("updatePrice","比亚迪唐");
+        System.out.println(count);
+        sqlSession.commit();
+        sqlSession.close();
+    }
+    @Test
+    public void testSelectOne(){
+        SqlSession sqlSession = SqlSessionUtil.OpenSession();
+        Object car =sqlSession.selectOne("selectOne","5");
+        System.out.println(car);
+
+        sqlSession.close();
+    }
+    @Test
+    public void testSelectAll(){
+        SqlSession sqlSession = SqlSessionUtil.OpenSession();
+        List cars =sqlSession.selectList("selectAll");
+        cars.forEach(car -> System.out.println(car));
         sqlSession.close();
     }
 }
