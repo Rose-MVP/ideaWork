@@ -8,12 +8,9 @@
         <outputRelativeToContentRoot value="true" />
         <module name="junit" />
         <module name="mybatis-001-introduction" />
-        <module name="mybatis-002-CRUD (2)" />
+        <module name="mybatis-002-CRUD" />
+        <module name="mybatis-003-configuration" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="mybatis-002-CRUD" target="1.8" />
-      <module name="mybatis-003-configuration" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>
