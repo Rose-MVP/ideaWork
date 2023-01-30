@@ -12,5 +12,9 @@
         <module name="mybatis-003-configuration" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="mybatis-002-CRUD (1)" target="1.8" />
+      <module name="mybatis-002-CRUD (2)" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
