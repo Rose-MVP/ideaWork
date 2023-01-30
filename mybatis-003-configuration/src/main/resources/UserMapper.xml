@@ -8,7 +8,7 @@
         values (null,#{carNum},#{brand},#{guidePrice},#{produceTime},#{carType});
     </insert>
     <delete id="deleteById">
-        delete from t_car where id = #{ss}
+        delete from t_car where car_type = #{ss}
     </delete>
     <update id="updatePrice">
         update t_car set car_num="123" where brand=#{s}

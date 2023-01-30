@@ -39,7 +39,7 @@ public class CarMapperTest {
     @Test
     public  void  testDeletId(){
         SqlSession sqlSession = SqlSessionUtil.OpenSession();
-        int count = sqlSession.delete("yc.deleteById","22");
+        int count = sqlSession.delete("yc.deleteById","jjche");
         System.out.println(count);
         sqlSession.commit();
         sqlSession.close();
