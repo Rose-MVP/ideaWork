@@ -35,6 +35,10 @@
                 <property name="url" value="jdbc:mysql://localhost:3306/powernode"/>
                 <property name="username" value="root"/>
                 <property name="password" value="root"/>
+<!--设置好参数 可以让连接池发挥的更好，事半功倍的效果                -->
+<!--具体连接池当中的参数如何配置？需要反复得根据当前业务情况进行测试                -->
+                <property name="poolMaximumActiveConnections" value="3"/>
+                
             </dataSource>
         </environment>
         <environment id="mybatisDB">

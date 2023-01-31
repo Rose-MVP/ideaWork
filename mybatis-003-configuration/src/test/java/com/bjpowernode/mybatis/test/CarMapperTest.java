@@ -1,8 +1,8 @@
-package test;
+package com.bjpowernode.mybatis.test;
 
 
-import mybatis.pojo.Car;
-import mybatis.utils.SqlSessionUtil;
+import com.bjpowernode.mybatis.pojo.Car;
+import com.bjpowernode.mybatis.utils.SqlSessionUtil;
 import org.apache.ibatis.session.SqlSession;
 import org.junit.Test;
 

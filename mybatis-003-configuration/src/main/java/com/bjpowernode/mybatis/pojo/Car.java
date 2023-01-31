@@ -1,4 +1,4 @@
-package mybatis.pojo;
+package com.bjpowernode.mybatis.pojo;
 
 public class Car {
     //
