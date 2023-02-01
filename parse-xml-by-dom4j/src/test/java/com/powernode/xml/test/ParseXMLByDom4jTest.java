@@ -1,4 +1,4 @@
-package com.powrenode.xml.test;
+package com.powernode.xml.test;
 
 import org.dom4j.Document;
 import org.dom4j.DocumentException;

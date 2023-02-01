@@ -55,7 +55,7 @@ public class CarMapperTest {
     @Test
     public void testSelectOne(){
         SqlSession sqlSession = SqlSessionUtil.OpenSession();
-        Object car =sqlSession.selectOne("selectOne","5");
+        Object car =sqlSession.selectOne("selectOne","3");
         System.out.println(car);
 
         sqlSession.close();

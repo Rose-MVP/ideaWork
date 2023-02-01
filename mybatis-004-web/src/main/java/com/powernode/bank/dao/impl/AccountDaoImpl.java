@@ -9,13 +9,17 @@ public class AccountDaoImpl implements AccountDao {
     @Override
     public Account selectByActno(String actno) {
         SqlSession sqlSession = SqlSessionUtil.OpenSession();
-        sqlSession.selectOne("account.selectActno",actno);
+        Account account  = (Account)sqlSession.selectOne("account.selectActno", actno);
         sqlSession.close();
-        return null;
+        return account;
     }
 
     @Override
     public int updateByActno(Account act) {
-        return 0;
+        SqlSession sqlSession = SqlSessionUtil.OpenSession();
+        int count = sqlSession.update("account.updateAct",act);
+        sqlSession.commit();
+        sqlSession.close();
+        return count;
     }
 }

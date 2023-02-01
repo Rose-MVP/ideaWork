@@ -5,7 +5,10 @@
     <mapper namespace="account">
         <insert id="">
         </insert>
-    <select id="selectActno">
-
+    <select id="selectActno" resultType="com.powernode.bank.pojo.Account">
+    select * from t_act where actno = #{actno}
     </select>
+    <update id="updateAct">
+    update  t_act set  banlance = #{banlance} where actno =#{actno}
+    </update>
 </mapper>
