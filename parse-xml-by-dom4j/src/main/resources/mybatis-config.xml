@@ -4,7 +4,7 @@
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
     <!--一般一个环境对应一个数据库  一个数据库会对应一个sqlsession对象-->
-    <environments default="mabatisDB">
+    <environments default="mybatisDB">
         <environment id="powernodeDB">
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">

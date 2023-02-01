@@ -9,6 +9,7 @@
         <module name="parse-xml-by-dom4j" />
         <module name="junit" />
         <module name="mybatis-001-introduction" />
+        <module name="mybatis-004-web" />
         <module name="mybatis-002-CRUD" />
         <module name="mybatis-003-configuration" />
       </profile>
