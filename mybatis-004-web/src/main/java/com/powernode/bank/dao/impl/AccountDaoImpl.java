@@ -22,4 +22,19 @@ public class AccountDaoImpl implements AccountDao {
         sqlSession.close();
         return count;
     }
+
+    @Override
+    public void delete() {
+
+    }
+
+    @Override
+    public void insert() {
+
+    }
+
+    @Override
+    public void update(String aaaa, double v) {
+
+    }
 }

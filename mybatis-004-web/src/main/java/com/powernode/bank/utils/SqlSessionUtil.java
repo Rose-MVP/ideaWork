@@ -19,9 +19,27 @@ public class SqlSessionUtil {
             throw new RuntimeException(e);
         }
     }
-
+//全局的 服务器级别的一个服务器中定义一个即可
+    public  static ThreadLocal<SqlSession> local =new ThreadLocal<>();
         public  static SqlSession OpenSession(){
-        return sqlSessionFactory.openSession();
+            SqlSession sqlSession =local.get();
+            if (sqlSession==null) {
+                sqlSession=sqlSessionFactory.openSession();
+                //绑定 SQLSession 对象绑定到当前线程上
+                local.set(sqlSession);
+            }
+        return sqlSession;
     }
+    /*
+    关闭Sqlsession 对象 (从当前线程上移除Sqlsession对象)
+    @param sqlSession
+     */
+        public  static  void close(SqlSession sqlSession){
+            if (sqlSession !=null) {
+                //移除sqlsession对象
+                //Tomcat 服务器支持线程池 用过的线程对象 t1 可能下一次还会使用这个线程
 
+                local.remove();
+            }
+        }
 }
