@@ -21,7 +21,12 @@ public class SqlSessionUtil {
     }
 //全局的 服务器级别的一个服务器中定义一个即可
     public  static ThreadLocal<SqlSession> local =new ThreadLocal<>();
-        public  static SqlSession OpenSession(){
+
+    /**
+     * 获取会话对象
+     * @return 会话对象
+     */
+    public  static SqlSession openSession(){
             SqlSession sqlSession =local.get();
             if (sqlSession==null) {
                 sqlSession=sqlSessionFactory.openSession();

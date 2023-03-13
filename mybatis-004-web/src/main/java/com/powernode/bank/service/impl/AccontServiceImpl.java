@@ -6,9 +6,11 @@ import com.powernode.bank.exceptions.MoneyNotEnoughException;
 import com.powernode.bank.exceptions.TransferException;
 import com.powernode.bank.pojo.Account;
 import com.powernode.bank.service.AccountService;
+import com.powernode.bank.utils.GenerateDaoProxy;
+import com.powernode.bank.utils.SqlSessionUtil;
 
 public class AccontServiceImpl implements AccountService {
-    private AccountDao accountDao =new AccountDaoImpl();
+    private AccountDao accountDao = (AccountDao) GenerateDaoProxy.generate(SqlSessionUtil.openSession(), AccountDao.class);
     @Override
     public void transfer(String fromActno, String toActno, double money) throws MoneyNotEnoughException, TransferException {
         Account fromAct = accountDao.selectByActno(fromActno);
@@ -21,9 +23,10 @@ public class AccontServiceImpl implements AccountService {
         fromAct.setBalance(fromAct.getBalance()-money);
         toAct.setBalance(toAct.getBalance()+money);
         int count =accountDao.updateByActno(fromAct);
+
         //模拟异常
-        String s=null;
-        s.toString();
+//        String s=null;
+//        s.toString();
 
         count+= accountDao.updateByActno(toAct);
         if (count!=2){
@@ -31,3 +34,4 @@ public class AccontServiceImpl implements AccountService {
         }
     }
 }
+
